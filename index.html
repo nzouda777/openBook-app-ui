@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>OpenBook</title>
+</head>
+<body class="mx-auto  space-y-32">
+    <header class="bg-gray-100">
+        <nav x-data="{ isOpen: false}" class="flex justify-between p-4 lg:p-4">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl text-red-400 font-bold flex">
+                    OpenBook
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                          </svg>
+                    </span>
+                </a>
+            </div>
+            <!-- left side header -->
+            <div class="flex items-center justify-between space-x-32 ">
+                <button @click="isOpen = !isOpen" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-500 lg:hidden ">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                      </svg>
+                </button>
+                
+                <div class="space-x-6 hidden flex items-center">
+                    <a href="#" class="bg-green-400 text-white p-2 rounded-lg capitalize">suscribe</a>
+                    <div class="user-info flex justify-between w-40 ">
+                        <div class="text-grey-500">Rodrigue Master</div>
+                        <img src="https://avatars.githubusercontent.com/u/94180196?v=4" class="rounded-3xl h-7" alt="">
+                    </div>
+                </div>
+                <div class="space-x-12  flex ">
+                    <a href="#" class="text-base text-center  py-2 hover:text-red-400 font-bold capitalize">Home</a>
+                            <a href="#" class="text-base text-center  py-2 hover:text-red-500 font-bold capitalize">Categories</a>
+                            <a href="#" class="text-base text-center  py-2 hover:text-red-500 font-bold capitalize">top books</a>
+                </div>
+                <div class="login-btn">
+                    <a href="#" class="p-4 bg-red-400 text-white font-bold capitalize rounded-lg">register</a>
+                </div>
+                <!-- mobile view -->
+                <div class="mobile-navbar">
+                    <div x-show="isOpen" @click.away=" isOpen = false" class="fixed left-0 w-full h-48 p-5 bg-gray-100 rounded-lg shadow-xl top-16">
+                        <div class="flex space-y-6 flex-col">
+                            <a href="#" class="text-base text-center hover:bg-red-400 py-2 hover:text-white capitalize">Home</a>
+                            <a href="#" class="text-base text-center hover:bg-red-400 py-2 hover:text-white capitalize">Categories</a>
+                            <a href="#" class="text-base text-center hover:bg-red-400 py-2 hover:text-white capitalize">top books</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+</body>
+</html>
