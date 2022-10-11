@@ -9,9 +9,9 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>OpenBook</title>
 </head>
-<body class="mx-auto  space-y-32">
-    <header class="bg-gray-100">
-        <nav x-data="{ isOpen: false}" class="flex justify-between p-4 lg:p-4">
+<body class="mx-auto space-x-12  space-y-8">
+    <header class="space-x-12 space-y-12">
+        <nav x-data="{ isOpen: false}" class="flex bg-gray-100 justify-between p-4 lg:p-4">
             <div class="flex items-center">
                 <a href="#" class="text-2xl text-red-400 font-bold flex">
                     OpenBook
@@ -56,8 +56,60 @@
                     </div>
                 </div>
             </div>
-
         </nav>
+        <div class="hero h-[500px] py-6 w-[1440px] grid grid-colss-2 grid-flow-col gap-1 justify-between rounded-lg px-32 bg-red-300">
+            <div class="content  mt-8 space-y-8 ">
+                <div class="text-base font-bold text-white tracking-widest uppercase">back to school</div>
+                <h2 class="font-bold text-6xl">Special 50% off</h2>
+                <p class="text-3xl ">for our student community</p>
+                <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure perspiciatis quidem odio vel soluta, optio quia similique ea, veritatis quo odit. Minus reprehenderit facere enim, nam qui laboriosam pariatur similique? </p>
+                <div class="flex">
+                    <a href="#" class="px-5 flex space-x-3 hover:bg-slate-800 shadow-xl rounded-xl py-5 bg-black  text-white">
+                        <span class="font-bold">Commencer</span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="right-img">
+                <img src="https://assets-global.website-files.com/5e78ee1f2f0ca263f9b67c56/5e9a43b11b847f34e5485fd8_boy-left.png" alt="">
+            </div>
+        </div>
     </header>
+    <div class="teaser grid grid-cols-4 gap-4 mt-2">
+        <div class="quality flex ">
+            <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                  </svg>
+            </div>
+            <div class="desc ml-2">
+                <h3 class="font-bold capitalize">
+                    fast book download
+                </h3>
+                <div class="desc">
+                    une vitesse de telechargement de livre qui est la magie
+                </div>
+            </div>
+        </div>
+        <div class="quality flex ">
+            <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>                  
+            </div>
+            <div class="desc ml-2">
+                <h3 class="font-bold capitalize">
+                    paiement securise
+                </h3>
+                <div class="desc">
+                    un systeme de paiment securise 
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
