@@ -4,50 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Book-icon-bible.png/900px-Book-icon-bible.png?20201013125426" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>OpenBook</title>
 </head>
 <body class="mx-auto space-x-12  space-y-8">
-    <header class="space-x-12 space-y-12">
+    <header class="m-2 space-y-12">
         <nav x-data="{ isOpen: false}" class="flex bg-gray-100 justify-between p-4 lg:p-4">
             <div class="flex items-center">
                 <a href="#" class="text-2xl text-red-400 font-bold flex">
                     OpenBook
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                          </svg>
-                    </span>
                 </a>
             </div>
-            <!-- left side header -->
+            <!-- right side header -->
             <div class="flex items-center justify-between space-x-32 ">
-                <button @click="isOpen = !isOpen" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-500 lg:hidden ">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-                      </svg>
-                </button>
                 
-                <div class="space-x-6 hidden flex items-center">
-                    <a href="#" class="bg-green-400 text-white p-2 rounded-lg capitalize">suscribe</a>
-                    <div class="user-info flex justify-between w-40 ">
-                        <div class="text-grey-500">Rodrigue Master</div>
-                        <img src="https://avatars.githubusercontent.com/u/94180196?v=4" class="rounded-3xl h-7" alt="">
-                    </div>
-                </div>
-                <div class="space-x-12  flex ">
+                
+                <!-- large navigation -->
+                <div class="space-x-12 hidden lg:inline-block  flex ">
                     <a href="#" class="text-base text-center  py-2 hover:text-red-400 font-bold capitalize">Home</a>
-                            <a href="#" class="text-base text-center  py-2 hover:text-red-500 font-bold capitalize">Categories</a>
-                            <a href="#" class="text-base text-center  py-2 hover:text-red-500 font-bold capitalize">top books</a>
-                </div>
-                <div class="login-btn">
-                    <a href="#" class="p-4 bg-red-400 text-white font-bold capitalize rounded-lg">register</a>
-                </div>
+                    <a href="#" class="text-base text-center  py-2 hover:text-red-500 font-bold capitalize">Categories</a>
+                    <a href="#" class="text-base text-center  py-2 hover:text-red-500 font-bold capitalize">top books</a>
+                    
+                    <a href="#" class="py-2 px-3 bg-red-400 text-white font-bold capitalize rounded-lg">register</a>
+                 </div>
+                
                 <!-- mobile view -->
+                <div class="register-icon flex space-between space-x-12 lg:hidden inline-block">
+                    <a href="#" class="text-red-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                          </svg>
+                    </a>
+                    <button @click="isOpen = !isOpen" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-500 lg:hidden ">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                          </svg>
+                    </button>
+                </div>
                 <div class="mobile-navbar">
-                    <div x-show="isOpen" @click.away=" isOpen = false" class="fixed left-0 w-full h-48 p-5 bg-gray-100 rounded-lg shadow-xl top-16">
+                    <div x-show="isOpen" @click.away=" isOpen = false" class="fixed left-0 w-full h-48 lg:hidden p-5 bg-gray-100 rounded-lg shadow-xl top-16">
                         <div class="flex space-y-6 flex-col">
                             <a href="#" class="text-base text-center hover:bg-red-400 py-2 hover:text-white capitalize">Home</a>
                             <a href="#" class="text-base text-center hover:bg-red-400 py-2 hover:text-white capitalize">Categories</a>
@@ -57,7 +56,7 @@
                 </div>
             </div>
         </nav>
-        <div class="hero h-[500px] py-6 w-[1440px] grid grid-colss-2 grid-flow-col gap-1 justify-between rounded-lg px-32 bg-red-300">
+        <div class="hero  py-3 grid grid-cols-1 lg:grid-cols-2  gap-1 justify-between rounded-lg lg:px-32 md:px-16 px-8  bg-red-300">
             <div class="content  mt-8 space-y-8 ">
                 <div class="text-base font-bold text-white tracking-widest uppercase">back to school</div>
                 <h2 class="font-bold text-6xl">Special 50% off</h2>
@@ -74,72 +73,74 @@
                     </a>
                 </div>
             </div>
-            <div class="right-img">
+            <div class="right-img flex justify-end">
                 <img src="https://assets-global.website-files.com/5e78ee1f2f0ca263f9b67c56/5e9a43b11b847f34e5485fd8_boy-left.png" alt="">
             </div>
         </div>
     </header>
-    <div class="teaser grid grid-cols-4 gap-4 mt-2">
-        <div class="quality flex ">
-            <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                  </svg>
-            </div>
-            <div class="desc ml-2">
-                <h3 class="font-bold capitalize">
-                    fast book download
-                </h3>
-                <div class="desc">
-                    une vitesse de telechargement de livre qui est la magie
+    <div class="flex">
+        <div class="teaser mb-6 grid md:grid-cols-2   lg:grid-cols-4 gap-5 mt-2">
+            <div class="quality flex justify-between">
+                <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                      </svg>
+                </div>
+                <div class="desc ml-2">
+                    <h3 class="font-bold capitalize">
+                        fast book download
+                    </h3>
+                    <div class="desc">
+                        une vitesse de telechargement de livre qui est la magie
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="quality flex ">
-            <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>                  
-            </div>
-            <div class="desc ml-2">
-                <h3 class="font-bold capitalize">
-                    paiement securise
-                </h3>
-                <div class="desc">
-                    un systeme de paiment securise 
+            <div class="quality flex ">
+                <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                      </svg>                  
                 </div>
-            </div> 
-        </div>
-        <div class="quality flex ">
-            <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
-                </svg>                                    
+                <div class="desc ml-2">
+                    <h3 class="font-bold capitalize">
+                        paiement securise
+                    </h3>
+                    <div class="desc">
+                        un systeme de paiment securise 
+                    </div>
+                </div> 
             </div>
-            <div class="desc ml-2">
-                <h3 class="font-bold capitalize">
-                    les livres de qualite
-                </h3>
-                <div class="desc">
-                    un catologue de livres de tout horizon
+            <div class="quality flex ">
+                <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
+                    </svg>                                    
                 </div>
-            </div>    
-        </div>
-        <div class="quality flex ">
-            <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
-                </svg>                                    
+                <div class="desc ml-2">
+                    <h3 class="font-bold capitalize">
+                        les livres de qualite
+                    </h3>
+                    <div class="desc">
+                        un catologue de livres de tout horizon
+                    </div>
+                </div>    
             </div>
-            <div class="desc ml-2">
-                <h3 class="font-bold capitalize">
-                    catologue libre
-                </h3>
-                <div class="desc">
-                    possibilte d'ajoute un livre de son choix
+            <div class="quality flex ">
+                <div class="icon bg-red-300 h-12 w-12 p-3 rounded-lg ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
+                    </svg>                                    
                 </div>
+                <div class="desc ml-2">
+                    <h3 class="font-bold capitalize">
+                        catologue libre
+                    </h3>
+                    <div class="desc">
+                        possibilte d'ajoute un livre de son choix
+                    </div>
+                </div>
+                
             </div>
-            
         </div>
     </div>
 </body>
